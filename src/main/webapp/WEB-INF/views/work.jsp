@@ -11,6 +11,7 @@
     <title>JSP</title>
 </head>
 <body>
-WORK TEST
+WORK TEST 123
+${username} ${age} 55
 </body>
 </html>
