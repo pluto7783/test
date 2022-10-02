@@ -5,7 +5,10 @@ import com.example.test.servlet.frontcontroller.MyView;
 import com.example.test.servlet.frontcontroller.v3.ControllerV3;
 import com.example.test.servlet.frontcontroller.v3.controller.HomeControllerV3;
 import com.example.test.servlet.frontcontroller.v3.controller.WorkControllerV3;
+import com.example.test.servlet.frontcontroller.v4.controller.HomeControllerV4;
+import com.example.test.servlet.frontcontroller.v4.controller.WorkControllerV4;
 import com.example.test.servlet.frontcontroller.v5.adapter.ControllerV3HandlerAdapter;
+import com.example.test.servlet.frontcontroller.v5.adapter.ControllerV4HandlerAdapter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,10 +35,14 @@ public class FrontControllerServletV5 extends HttpServlet {
     private void initHandlerMappingMap() {
         handlerMappingMap.put("/v5/v3/home", new HomeControllerV3());
         handlerMappingMap.put("/v5/v3/work", new WorkControllerV3());
+
+        handlerMappingMap.put("/v5/v4/home", new HomeControllerV4());
+        handlerMappingMap.put("/v5/v4/work", new WorkControllerV4());
     }
 
     private void initHandlerAdapters() {
         handlerAdapters.add(new ControllerV3HandlerAdapter());
+        handlerAdapters.add(new ControllerV4HandlerAdapter());
     }
 
     @Override
